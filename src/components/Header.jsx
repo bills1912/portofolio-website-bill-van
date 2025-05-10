@@ -29,7 +29,7 @@ const Header = () => {
             className="logo"
           >
             <img
-              src="/images/logo.svg"
+              src="/portofolio-website-bill-van/images/logo.svg"
               width={40}
               height={40}
               alt="Henry Clark"
