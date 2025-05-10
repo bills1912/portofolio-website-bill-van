@@ -12,7 +12,7 @@ import SkillCard from "./SkillCard";
 
 const skillItem = [
   {
-    imgSrc: '/portofolio-website-bill-van/images/python.svg',
+    imgSrc: '/portofolio-website-bill-van/images/figma.svg',
     label: 'Python',
     desc: 'Data Science and AI Implementation'
   },
