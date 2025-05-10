@@ -70,7 +70,7 @@ const Contact = () => {
         </div>
 
         <form
-          action="https://getform.io/f/bwngmzya"
+          action="https://getform.io/f/apjnwqla"
           method="POST"
           className="xl:pl-10 2xl:pl-20"
         >
@@ -90,7 +90,7 @@ const Contact = () => {
                 id="name"
                 autoComplete="name"
                 required
-                placeholder="Henry Clark"
+                placeholder="Bill Van Ricardo Zalukhu"
                 className="text-field reveal-up"
               />
             </div>
@@ -109,7 +109,7 @@ const Contact = () => {
                 id="email"
                 autoComplete="email"
                 required
-                placeholder="henry@example.com"
+                placeholder="billvanricardozalukhu@example.com"
                 className="text-field reveal-up"
               />
             </div>
@@ -126,7 +126,7 @@ const Contact = () => {
             <textarea
               name="message"
               id="message"
-              placeholder="Hi!"
+              placeholder="Hello, I would like to discuss..."
               required
               className="text-field resize-y min-h-32 max-h-80 reveal-up"
             ></textarea>
