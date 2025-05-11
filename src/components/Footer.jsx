@@ -56,6 +56,7 @@ const socials = [
   // }
 ];
 
+const currentYear = new Date().getFullYear();
 
 const Footer = () => {
   return (
@@ -132,7 +133,7 @@ const Footer = () => {
           </a>
 
           <p className="text-zinc-500 text-sm reveal-up">
-            &copy; 2024 <span className="text-zinc-200">vandataalchemist</span>
+            &copy; {currentYear} <span className="text-zinc-200">vandataalchemist</span>
           </p>
         </div>
 
