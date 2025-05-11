@@ -36,24 +36,24 @@ const sitemap = [
 const socials = [
   {
     label: 'GitHub',
-    href: 'https://www.github.com/codewithsadee-org'
+    href: 'https://github.com/bills1912'
   },
   {
     label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/codewithsadee'
+    href: 'http://www.linkedin.com/in/bill-van-ricardo-zalukhu-796870272'
   },
   {
     label: 'Twitter X',
-    href: 'https://x.com/codewithsadee_'
+    href: 'https://x.com/V_dataalchemist'
   },
   {
     label: 'Instagram',
-    href: 'https://www.instagram.com/codewithsadee'
+    href: 'https://www.instagram.com/vandataalchemist/'
   },
-  {
-    label: 'CodePen',
-    href: 'https://codepen.io/codewithsadee'
-  }
+  // {
+  //   label: 'CodePen',
+  //   href: 'https://codepen.io/codewithsadee'
+  // }
 ];
 
 
