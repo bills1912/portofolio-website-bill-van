@@ -13,6 +13,7 @@ import PropTypes from 'prop-types';
 const ProjectCard = ({
   imgSrc,
   title,
+  desc,
   tags,
   projectLink,
   classes
@@ -37,6 +38,9 @@ const ProjectCard = ({
           </h3>
 
           <div className="flex flex-wrap items-center gap-2">
+            <p className="text-zinc-400 text-sm">
+              {desc}
+            </p>
             {tags.map((label, key) => (
               <span
                 key={key}
@@ -48,22 +52,25 @@ const ProjectCard = ({
           </div>
         </div>
 
-        <div className="w-11 h-11 rounded-lg grid place-items-center bg-sky-400 text-zinc-950 shrink-0">
-          <span
-            className="material-symbols-rounded"
-            aria-hidden="true"
-          >
-            arrow_outward
-          </span>
-        </div>
+        {projectLink !== '' && (
+          <div className="w-11 h-11 rounded-lg grid place-items-center bg-sky-400 text-zinc-950 shrink-0">
+            <span
+              className="material-symbols-rounded"
+              aria-hidden="true"
+            >
+              arrow_outward
+            </span>
+            <a
+              href={projectLink}
+              target='_blank'
+              className="absolute inset-0"
+            >
+            </a>
+          </div>
+        )}
 
       </div>
 
-      <a
-        href={projectLink}
-        target='_blank'
-        className="absolute inset-0"
-      ></a>
 
     </div>
   )
@@ -73,6 +80,7 @@ ProjectCard.propTypes = {
   imgSrc: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   tags: PropTypes.array.isRequired,
+  desc: PropTypes.array.isRequired,
   projectLink: PropTypes.string,
   classes: PropTypes.string
 }

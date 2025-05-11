@@ -57,7 +57,7 @@ const skillItem = [
     desc: 'Framework'
   },
   {
-    imgSrc: '/portofolio-website-bill-van/images/earthengine.svg',
+    imgSrc: '/portofolio-website-bill-van/images/earthengine.png',
     label: 'Google Earth Engine',
     desc: 'Remote Sensing'
   },

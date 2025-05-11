@@ -12,40 +12,60 @@ import ProjectCard from "./ProjectCard";
 
 const works = [
   {
-    imgSrc: '/portofolio-website-bill-van/images/project-1.jpg',
-    title: 'Full stack music app',
-    tags: ['API', 'MVC', 'Development'],
-    projectLink: 'https://musify-5al0.onrender.com/'
-  },
-  {
-    imgSrc: '/portofolio-website-bill-van/images/project-2.jpg',
-    title: 'Free stock photo app',
-    tags: ['API', 'SPA'],
-    projectLink: 'https://pixstock-official.vercel.app/'
-  },
-  {
-    imgSrc: '/portofolio-website-bill-van/images/project-3.jpg',
-    title: 'Recipe app',
-    tags: ['Development', 'API'],
+    imgSrc: '/portofolio-website-bill-van/images/project-1.png',
+    title: 'MPL-PORD',
+    tags: ['Object Detection', 'Docker'],
+    desc: 'An application to detect the type of palm oil ripeness from photo, video, and streaming.',
     projectLink: ''
   },
   {
-    imgSrc: '/portofolio-website-bill-van/images/project-4.jpg',
-    title: 'Real state website',
-    tags: ['Web-design', 'Development'],
-    projectLink: 'https://github.com/codewithsadee-org/wealthome'
+    imgSrc: '/portofolio-website-bill-van/images/project-2.png',
+    title: 'Website Desa Cantik',
+    tags: ['Spatial Data', 'Data Management'],
+    desc: 'A web application to mapping village data for accelerate government program in poverty.',
+    projectLink: 'https://desa-cantik.datada1278.com/'
   },
   {
-    imgSrc: '/portofolio-website-bill-van/images/project-5.jpg',
-    title: 'eCommerce website',
-    tags: ['eCommerce', 'Development'],
-    projectLink: 'https://github.com/codewithsadee/anon-ecommerce-website'
+    imgSrc: '/portofolio-website-bill-van/images/project-3.png',
+    title: 'Scraping Infrastructure Data for PODES 2025',
+    tags: ['Web Scraping', 'Streamlit'],
+    desc: 'A web application to scraping and visualize the infrastructure data for PODES 2025.',
+    projectLink: 'https://scraping-data-for-podes25.streamlit.app/'
   },
   {
-    imgSrc: '/portofolio-website-bill-van/images/project-6.jpg',
-    title: 'vCard Personal portfolio',
-    tags: ['Web-design', 'Development'],
-    projectLink: 'https://github.com/codewithsadee/vcard-personal-portfolio'
+    imgSrc: '/portofolio-website-bill-van/images/project-4.png',
+    title: 'Scraping Data for Education',
+    tags: ['Web Scraping', 'Education'],
+    desc: 'A web application to scraping and visualize the education data for sectoral.',
+    projectLink: 'https://education-sentiment-analysis.streamlit.app/?page=Home'
+  },
+  {
+    imgSrc: '/portofolio-website-bill-van/images/project-5.png',
+    title: 'API Web Application for Gunungsitoli Municipality Government',
+    tags: ['API', 'Government'],
+    desc: 'A web API application for communicate data easily.',
+    projectLink: ''
+  },
+  {
+    imgSrc: '/portofolio-website-bill-van/images/project-6.png',
+    title: 'PKL STIS Data Management Feature in PPPM Web Application',
+    tags: ['Web Applicaton', 'Data'],
+    desc: 'A web application to manage the data of students who are doing internship in PPPM.',
+    projectLink: 'https://pppm.stis.ac.id/pkl'
+  },
+  {
+    imgSrc: '/portofolio-website-bill-van/images/project-7.png',
+    title: 'Testimoni Business in Statistical Service',
+    tags: ['Web Application', 'Testimoni'],
+    desc: 'A web application to manage testimoni data from business in statistical service.',
+    projectLink: 'https://vandataalchemist-testimoni.streamlit.app/'
+  },
+  {
+    imgSrc: '/portofolio-website-bill-van/images/project-8.png',
+    title: 'SeeMitra',
+    tags: ['Spatial', 'Management'],
+    desc: 'A web application to manage BPS collaborator for working in statistical work.',
+    projectLink: 'https://seemitra.datada1278.com/'
   },
 ];
 
@@ -63,12 +83,13 @@ const Work = () => {
         </h2>
 
         <div className="grid gap-x-4 gap-y-5 grid-cols-[repeat(auto-fill,_minmax(280px,_1fr))]">
-          {works.map(({ imgSrc, title, tags, projectLink }, key) => (
+          {works.map(({ imgSrc, title, tags, desc, projectLink }, key) => (
             <ProjectCard
               key={key}
               imgSrc={imgSrc}
               title={title}
               tags={tags}
+              desc={desc}
               projectLink={projectLink}
               classes="reveal-up"
             />
