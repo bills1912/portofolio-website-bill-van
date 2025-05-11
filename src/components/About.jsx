@@ -7,11 +7,11 @@
 const aboutItems = [
   {
     label: 'Project done',
-    number: 45
+    number: 5
   },
   {
     label: 'Years of experience',
-    number: 10
+    number: 3
   }
 ];
 
@@ -26,7 +26,7 @@ const About = () => {
 
         <div className="bg-zinc-800/50 p-7 rounded-2xl md:p-12 reveal-up">
           <p className="text-zinc-300 mb-4 md:mb-8 md:text-xl md:max-w-[60ch]">
-            Welcome! I&apos;m Henry, a professional web developer with a knack for crafting visually stunning and highly functional websites. Combining creativity and technical expertise. I transform your vision into digital masterpiece that excels in both appearance and performance.
+            Welcome! I&apos;m Bill Van Ricardo Zalukhu, a skilled data scientist and web developer specializing in data analysis and computer vision. Blending analytical precision with technical expertise, I create impactful web solutions and uncover insights that drive innovation and performance.
           </p>
 
           <div className="flex flex-wrap items-center gap-4 md:gap-7">
