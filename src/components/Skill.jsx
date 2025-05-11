@@ -56,6 +56,11 @@ const skillItem = [
     label: 'Laravel',
     desc: 'Framework'
   },
+  {
+    imgSrc: '/portofolio-website-bill-van/images/earthengine.svg',
+    label: 'Google Earth Engine',
+    desc: 'Remote Sensing'
+  },
 ];
 
 
