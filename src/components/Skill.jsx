@@ -32,9 +32,14 @@ const skillItem = [
     desc: 'Web Server'
   },
   {
-    imgSrc: '/portofolio-website-bill-van/images/expressjs.svg',
-    label: 'ExpressJS',
-    desc: 'Node Framework'
+    imgSrc: '/portofolio-website-bill-van/images/spss.svg',
+    label: 'SPSS',
+    desc: 'Statistical Analysis'
+  },
+  {
+    imgSrc: '/portofolio-website-bill-van/images/rstudio.svg',
+    label: 'RStudio',
+    desc: 'Statistical Analysis and Modelling'
   },
   {
     imgSrc: '/portofolio-website-bill-van/images/mongodb.svg',
@@ -47,9 +52,9 @@ const skillItem = [
     desc: 'Framework'
   },
   {
-    imgSrc: '/portofolio-website-bill-van/images/tailwindcss.svg',
-    label: 'TailwindCSS',
-    desc: 'User Interface'
+    imgSrc: '/portofolio-website-bill-van/images/laravel.svg',
+    label: 'Laravel',
+    desc: 'Framework'
   },
 ];
 
