@@ -44,7 +44,7 @@ const About = () => {
             }
 
             <img
-              src="/portofolio-website-bill-van/images/logo.svg"
+              src="/portofolio-website-bill-van/images/logo.png"
               alt="Logo"
               width={30}
               height={30}
