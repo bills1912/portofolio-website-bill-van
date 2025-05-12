@@ -39,7 +39,7 @@ const skillItem = [
   {
     imgSrc: '/portofolio-website-bill-van/images/rstudio.svg',
     label: 'RStudio',
-    desc: 'Statistical Analysis and Modelling'
+    desc: 'Statistical Processing'
   },
   {
     imgSrc: '/portofolio-website-bill-van/images/mongodb.svg',
@@ -60,6 +60,11 @@ const skillItem = [
     imgSrc: '/portofolio-website-bill-van/images/earthengine.png',
     label: 'Google Earth Engine',
     desc: 'Remote Sensing'
+  },
+  {
+    imgSrc: '/portofolio-website-bill-van/images/altair.png',
+    label: 'Rapidminer AI Studio',
+    desc: 'Data Analytics'
   },
 ];
 
