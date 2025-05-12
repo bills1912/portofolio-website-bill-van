@@ -48,7 +48,6 @@ const Hero = () => {
               <ButtonPrimary
                 label="Download CV"
                 icon="download"
-                download
               />
             </a>
 
