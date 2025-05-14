@@ -67,6 +67,13 @@ const works = [
     desc: 'A web application to manage BPS collaborator for working in statistical work.',
     projectLink: 'https://seemitra.datada1278.com/'
   },
+  {
+    imgSrc: '/portofolio-website-bill-van/images/project-9.png',
+    title: 'Land Use Detection using Remote Sensing Dashboard',
+    tags: ['Spatial', 'LULC'],
+    desc: 'A web application to show the result of land use detection using remote sensing.',
+    projectLink: ''
+  },
 ];
 
 
