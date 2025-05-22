@@ -66,6 +66,11 @@ const skillItem = [
     label: 'Rapidminer AI Studio',
     desc: 'Data Analytics'
   },
+  {
+    imgSrc: '/portofolio-website-bill-van/images/django.svg',
+    label: 'Django',
+    desc: 'Python Framework'
+  },
 ];
 
 
