@@ -74,6 +74,13 @@ const works = [
     desc: 'A web application to show the result of land use detection using remote sensing.',
     projectLink: ''
   },
+  {
+    imgSrc: '/portofolio-website-bill-van/images/project-10.png',
+    title: 'Learning Type Activity Clustering with KMeans Dashboard',
+    tags: ['Machine Learning', 'Clustering'],
+    desc: 'A dashboard to visualize the result of learning activity clustering with KMeans.',
+    projectLink: ''
+  },
 ];
 
 
