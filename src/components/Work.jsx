@@ -81,6 +81,13 @@ const works = [
     desc: 'A dashboard to visualize the result of learning activity clustering with KMeans.',
     projectLink: ''
   },
+  {
+    imgSrc: '/portofolio-website-bill-van/images/project-11.png',
+    title: 'Landing Page Template',
+    tags: ['Landing Page', 'Framework'],
+    desc: 'A beautiful, innovative, and futuristic template.',
+    projectLink: 'https://bloom-landing-builder.lovable.app/#'
+  },
 ];
 
 
