@@ -88,6 +88,13 @@ const works = [
     desc: 'A beautiful, innovative, and futuristic template.',
     projectLink: 'https://bloom-landing-builder.lovable.app/#'
   },
+  {
+    imgSrc: '/portofolio-website-bill-van/images/project-12.png',
+    title: 'SINTONG',
+    tags: ['Mobile Apps', 'Census and Survey Tracker'],
+    desc: 'Bring Back Your Real-Time Tracking, Upgrade Your Census and Survey Data Quality.',
+    projectLink: 'https://bloom-landing-builder.lovable.app/#'
+  },
 ];
 
 
