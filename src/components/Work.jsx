@@ -93,7 +93,7 @@ const works = [
     title: 'SINTONG',
     tags: ['Mobile Apps', 'Census and Survey Tracker'],
     desc: 'Bring Back Your Real-Time Tracking, Upgrade Your Census and Survey Data Quality.',
-    projectLink: 'https://bloom-landing-builder.lovable.app/#'
+    projectLink: 'https://bills1912.github.io/SINTONG-Landing-Page/'
   },
 ];
 
