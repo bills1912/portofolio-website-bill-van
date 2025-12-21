@@ -3,14 +3,24 @@
  * @license Apache-2.0
  */
 
-
 /**
  * Components
  */
 import { ButtonPrimary, ButtonOutline } from "./Button";
-
+import TypingText from "./TypingText";
 
 const Hero = () => {
+  // Definisi segmen kata untuk animasi
+  const typingData = [
+    { text: "Developing " },
+    { text: "Insightful", highlight: true }, // Akan di-stabilo setelah selesai
+    { text: ", " },
+    { text: "Scalable", highlight: true },   // Akan di-stabilo setelah selesai
+    { text: ", " },
+    { text: "Data-Driven Web", highlight: true }, // Akan di-stabilo setelah selesai
+    { text: " Solutions" }
+  ];
+
   return (
     <section
       id="home"
@@ -39,8 +49,11 @@ const Hero = () => {
             </div>
           </div>
 
-          <h2 className="headline-1 max-w-[15ch] sm:max-w-[20ch] lg:max-w-[15ch] mt-5 mb-8 lg:mb-10">
-            Developing Insightful, Scalable, Data-Driven Web Solutions
+          <h2 className="headline-1 max-w-[15ch] sm:max-w-[20ch] lg:max-w-[15ch] mt-5 mb-8 lg:mb-10 min-h-[3em] lg:min-h-[auto]">
+            <TypingText 
+              data={typingData}
+              delay={50}
+            />
           </h2>
 
           <div className="flex items-center gap-3">
