@@ -24,8 +24,8 @@ const About = () => {
     >
       <div className="container">
 
-        <div className="bg-zinc-800/50 p-7 rounded-2xl md:p-12 reveal-up">
-          <p className="text-zinc-300 mb-4 md:mb-8 md:text-xl md:max-w-[60ch]">
+        <div className="bg-zinc-800/50 dark:bg-zinc-800/50 light:bg-white/80 light:shadow-lg light:border light:border-zinc-200 p-7 rounded-2xl md:p-12 reveal-up transition-colors duration-300">
+          <p className="text-zinc-300 dark:text-zinc-300 light:text-zinc-600 mb-4 md:mb-8 md:text-xl md:max-w-[60ch]">
             Welcome! I&apos;m Bill Van Ricardo Zalukhu, a skilled data scientist and web developer specializing in data analysis and computer vision. Blending analytical precision with technical expertise, I create impactful web solutions and uncover insights that drive innovation and performance.
           </p>
 
@@ -34,11 +34,11 @@ const About = () => {
               aboutItems.map(({ label, number }, key) => (
                 <div key={key}>
                   <div className="flex items-center md:mb-2">
-                    <span className="text-2xl font-semibold md:text-4xl">{number}</span>
+                    <span className="text-2xl font-semibold md:text-4xl text-zinc-100 dark:text-zinc-100 light:text-zinc-800">{number}</span>
                     <span className="text-sky-400 font-semibold md:text-3xl">+</span>
                   </div>
 
-                  <p className="text-sm text-zinc-400">{label}</p>
+                  <p className="text-sm text-zinc-400 dark:text-zinc-400 light:text-zinc-500">{label}</p>
                 </div>
               ))
             }
@@ -48,7 +48,7 @@ const About = () => {
               alt="Logo"
               width={30}
               height={30}
-              className="ml-auto md:w-[40px] md:h-[40px]"
+              className="ml-auto md:w-[40px] md:h-[40px] dark:invert-0 light:invert transition-[filter] duration-300"
             />
           </div>
         </div>

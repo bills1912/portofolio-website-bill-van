@@ -12,8 +12,42 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Light/Dark mode base styles */
+:root {
+  --bg-primary: #18181b;
+  --bg-secondary: #27272a;
+  --text-primary: #fafafa;
+  --text-secondary: #a1a1aa;
+  --accent: #38bdf8;
+}
+
+.light {
+  --bg-primary: #fafafa;
+  --bg-secondary: #f4f4f5;
+  --text-primary: #18181b;
+  --text-secondary: #71717a;
+  --accent: #0ea5e9;
+}
+
 body {
-  @apply bg-zinc-900 text-zinc-50
+  @apply bg-zinc-900 text-zinc-50 transition-colors duration-300;
+}
+
+.light body,
+body:has(.light) {
+  @apply bg-zinc-50 text-zinc-900;
+}
+
+html.light {
+  @apply bg-zinc-50;
+}
+
+html.light body {
+  @apply bg-zinc-50 text-zinc-900;
+}
+
+html.dark body {
+  @apply bg-zinc-900 text-zinc-50;
 }
 
 
@@ -26,6 +60,13 @@ body {
 .headline-2 {
   @apply max-w-max;
   background: -webkit-linear-gradient(0deg, #fafafa, #a1a1aa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.light .headline-1,
+.light .headline-2 {
+  background: -webkit-linear-gradient(0deg, #18181b, #52525b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -61,6 +102,10 @@ body {
   @apply bg-zinc-700 overflow-hidden;
 }
 
+.light .img-box {
+  @apply bg-zinc-200;
+}
+
 .img-cover {
   @apply w-full h-full object-cover
 }
@@ -85,11 +130,19 @@ body {
   @apply w-10 h-10 grid place-items-center bg-zinc-50/10 rounded-xl ring-inset ring-1 ring-zinc-50/[0.02] backdrop-blur-2xl hover:bg-zinc-50/15 transition-[transform,background-color] active:scale-95
 }
 
+.light .menu-btn {
+  @apply bg-zinc-900/10 ring-zinc-900/[0.02] hover:bg-zinc-900/15 text-zinc-900;
+}
+
 
 /* Navbar */
 
 .navbar {
   @apply absolute top-full mt-2 right-0 min-w-40 p-2 bg-zinc-50/10 rounded-2xl ring-inset ring-1 ring-zinc-50/5 scale-90 isolate blur-sm opacity-0 invisible transition-[opacity,transform,filter] md:static md:flex md:items-center md:mt-0 md:opacity-100 md:blur-0 md:visible md:scale-100 backdrop-blur-2xl
+}
+
+.light .navbar {
+  @apply bg-white/80 ring-zinc-200;
 }
 
 .navbar.active {
@@ -100,12 +153,24 @@ body {
   @apply grid items-center h-9 px-4 text-sm font-medium tracking-wide text-zinc-50/50 hover:text-zinc-50 transition-colors
 }
 
+.light .nav-link {
+  @apply text-zinc-500 hover:text-zinc-900;
+}
+
 .nav-link.active {
   @apply text-zinc-900 duration-500
 }
 
+.light .nav-link.active {
+  @apply text-white;
+}
+
 .navbar .active-box {
   @apply absolute bg-zinc-50 rounded-lg -z-10 transition-[top,left] duration-500
+}
+
+.light .navbar .active-box {
+  @apply bg-zinc-900;
 }
 
 
@@ -115,8 +180,16 @@ body {
   @apply max-w-max h-9 flex items-center gap-2 px-4 rounded-xl font-medium text-sm ring-1 ring-zinc-50/5 ring-inset transition-[background-color]
 }
 
+.light .btn {
+  @apply ring-zinc-900/10;
+}
+
 .btn-secondary {
   @apply bg-zinc-50 text-zinc-900 active:bg-zinc-50/80
+}
+
+.light .btn-secondary {
+  @apply bg-zinc-900 text-zinc-50 active:bg-zinc-900/80;
 }
 
 .btn .material-symbols-rounded {
@@ -131,8 +204,16 @@ body {
   @apply h-11 bg-sky-400 text-zinc-950 hover:bg-sky-300 active:bg-sky-400
 }
 
+.light .btn-primary {
+  @apply bg-sky-500 hover:bg-sky-400 active:bg-sky-500;
+}
+
 .btn-outline {
   @apply h-11 bg-zinc-800 hover:bg-zinc-700 active:bg-zinc-800
+}
+
+.light .btn-outline {
+  @apply bg-zinc-100 hover:bg-zinc-200 active:bg-zinc-100 text-zinc-900;
 }
 
 
@@ -142,10 +223,136 @@ body {
   @apply block text-zinc-200 text-sm font-normal mb-2
 }
 
+.light .label {
+  @apply text-zinc-700;
+}
+
 .text-field {
   @apply block outline-none w-full px-3 py-3 text-sm bg-zinc-800 rounded-xl ring-1 ring-inset ring-transparent transition-shadow hover:ring-zinc-50/5 focus:ring-sky-400 focus:ring-2
 }
 
+.light .text-field {
+  @apply bg-white text-zinc-900 hover:ring-zinc-200 border border-zinc-200;
+}
+
 .text-field::placeholder {
   @apply text-zinc-400
+}
+
+.light .text-field::placeholder {
+  @apply text-zinc-500;
+}
+
+
+/* Cards & Sections with theme support */
+
+.light .bg-zinc-800\/50 {
+  @apply bg-zinc-100/80;
+}
+
+.light .bg-zinc-800 {
+  @apply bg-white shadow-sm border border-zinc-200;
+}
+
+.light .ring-zinc-50\/5 {
+  @apply ring-zinc-200;
+}
+
+.light .ring-zinc-50\/10 {
+  @apply ring-zinc-200;
+}
+
+
+/* Theme Toggle Animation */
+.theme-toggle {
+  @apply relative overflow-hidden;
+}
+
+.theme-toggle::before {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-r from-sky-400/0 via-sky-400/20 to-sky-400/0 -translate-x-full;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+
+/* Smooth theme transitions */
+* {
+  @apply transition-colors duration-200;
+}
+
+/* Exclude specific elements from transition */
+.no-transition,
+.no-transition * {
+  transition: none !important;
+}
+
+
+/* Achievement Card Enhancements */
+.achievement-card {
+  @apply relative overflow-hidden;
+}
+
+.achievement-card::before {
+  content: '';
+  @apply absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/5 to-transparent opacity-0 transition-opacity duration-300;
+}
+
+.achievement-card:hover::before {
+  @apply opacity-100;
+}
+
+
+/* Glassmorphism effects */
+.glass {
+  @apply bg-white/10 backdrop-blur-xl border border-white/20;
+}
+
+.light .glass {
+  @apply bg-white/80 border-zinc-200;
+}
+
+
+/* Enhanced scrollbar */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-zinc-900;
+}
+
+.light ::-webkit-scrollbar-track {
+  @apply bg-zinc-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-zinc-700 rounded-full;
+}
+
+.light ::-webkit-scrollbar-thumb {
+  @apply bg-zinc-300;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-zinc-600;
+}
+
+.light ::-webkit-scrollbar-thumb:hover {
+  @apply bg-zinc-400;
+}
+
+
+/* Selection colors */
+::selection {
+  @apply bg-sky-400/30 text-sky-100;
+}
+
+.light ::selection {
+  @apply bg-sky-500/30 text-sky-900;
 }

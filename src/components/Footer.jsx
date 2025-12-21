@@ -24,8 +24,8 @@ const sitemap = [
     href: '#work'
   },
   {
-    label: 'Reviews',
-    href: '#reviews'
+    label: 'Achievements',
+    href: '#achievements'
   },
   {
     label: 'Contact me',
@@ -50,10 +50,6 @@ const socials = [
     label: 'Instagram',
     href: 'https://www.instagram.com/vandataalchemist/'
   },
-  // {
-  //   label: 'CodePen',
-  //   href: 'https://codepen.io/codewithsadee'
-  // }
 ];
 
 const currentYear = new Date().getFullYear();
@@ -71,7 +67,7 @@ const Footer = () => {
             </h2>
 
             <ButtonPrimary
-              href="mailto:codewithsadee@gmail.com"
+              href="mailto:billvanricardozalukhu@gmail.com"
               label="Start project"
               icon="chevron_right"
               classes="reveal-up"
@@ -81,14 +77,14 @@ const Footer = () => {
           <div className="grid grid-cols-2 gap-4 lg:pl-20">
 
             <div>
-              <p className="mb-2 reveal-up">Sitemap</p>
+              <p className="mb-2 reveal-up text-zinc-200 dark:text-zinc-200 light:text-zinc-700">Sitemap</p>
 
               <ul>
                 {sitemap.map(({ label, href }, key) => (
                   <li key={key}>
                     <a
                       href={href}
-                      className="block text-sm text-zinc-400 py-1 transition-colors hover:text-zinc-200 reveal-up"
+                      className="block text-sm text-zinc-400 dark:text-zinc-400 light:text-zinc-500 py-1 transition-colors hover:text-zinc-200 dark:hover:text-zinc-200 light:hover:text-zinc-800 reveal-up"
                     >
                       {label}
                     </a>
@@ -98,7 +94,7 @@ const Footer = () => {
             </div>
 
             <div>
-              <p className="mb-2 reveal-up">Socials</p>
+              <p className="mb-2 reveal-up text-zinc-200 dark:text-zinc-200 light:text-zinc-700">Socials</p>
 
               <ul>
                 {socials.map(({ label, href }, key) => (
@@ -106,7 +102,7 @@ const Footer = () => {
                     <a
                       href={href}
                       target="_blank"
-                      className="block text-sm text-zinc-400 py-1 transition-colors hover:text-zinc-200 reveal-up"
+                      className="block text-sm text-zinc-400 dark:text-zinc-400 light:text-zinc-500 py-1 transition-colors hover:text-zinc-200 dark:hover:text-zinc-200 light:hover:text-zinc-800 reveal-up"
                     >
                       {label}
                     </a>
@@ -129,11 +125,12 @@ const Footer = () => {
               width={40}
               height={40}
               alt="Logo"
+              className="dark:invert-0 light:invert transition-[filter] duration-300"
             />
           </a>
 
-          <p className="text-zinc-500 text-sm reveal-up">
-            &copy; {currentYear} <span className="text-zinc-200">vandataalchemist</span>
+          <p className="text-zinc-500 dark:text-zinc-500 light:text-zinc-400 text-sm reveal-up">
+            &copy; {currentYear} <span className="text-zinc-200 dark:text-zinc-200 light:text-zinc-700">vandataalchemist</span>
           </p>
         </div>
 

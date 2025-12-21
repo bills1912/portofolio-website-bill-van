@@ -25,12 +25,12 @@ const Hero = () => {
                 src="/portofolio-website-bill-van/images/avatar-1.jpg"
                 width={40}
                 height={40}
-                alt="Henry clark portrait"
+                alt="Bill Van Ricardo Zalukhu portrait"
                 className="img-cover"
               />
             </figure>
 
-            <div className="flex items-center gap-1.5 text-zinc-400 text-sm tracking-wide">
+            <div className="flex items-center gap-1.5 text-zinc-400 dark:text-zinc-400 light:text-zinc-600 text-sm tracking-wide">
               <span className="relative w-2 h-2 rounded-full bg-emerald-400">
                 <span className="absolute inset-0 rounded-full bg-emerald-400 animate-ping"></span>
               </span>
