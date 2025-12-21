@@ -15,7 +15,8 @@ const categoryColors = {
     iconBg: 'bg-emerald-500/10',
     badge: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
     glow: 'shadow-emerald-500/30',
-    ring: 'ring-emerald-500/30'
+    ring: 'ring-emerald-500/30',
+    lightBadge: 'bg-emerald-100 text-emerald-700 border-emerald-300',
   },
   Competition: {
     gradient: 'from-amber-500/20 to-amber-500/5',
@@ -25,7 +26,8 @@ const categoryColors = {
     iconBg: 'bg-amber-500/10',
     badge: 'bg-amber-500/20 text-amber-400 border-amber-500/30',
     glow: 'shadow-amber-500/30',
-    ring: 'ring-amber-500/30'
+    ring: 'ring-amber-500/30',
+    lightBadge: 'bg-amber-100 text-amber-700 border-amber-300',
   },
   Innovation: {
     gradient: 'from-violet-500/20 to-violet-500/5',
@@ -35,7 +37,8 @@ const categoryColors = {
     iconBg: 'bg-violet-500/10',
     badge: 'bg-violet-500/20 text-violet-400 border-violet-500/30',
     glow: 'shadow-violet-500/30',
-    ring: 'ring-violet-500/30'
+    ring: 'ring-violet-500/30',
+    lightBadge: 'bg-violet-100 text-violet-700 border-violet-300',
   },
   Publication: {
     gradient: 'from-sky-500/20 to-sky-500/5',
@@ -45,7 +48,8 @@ const categoryColors = {
     iconBg: 'bg-sky-500/10',
     badge: 'bg-sky-500/20 text-sky-400 border-sky-500/30',
     glow: 'shadow-sky-500/30',
-    ring: 'ring-sky-500/30'
+    ring: 'ring-sky-500/30',
+    lightBadge: 'bg-sky-100 text-sky-700 border-sky-300',
   },
   Leadership: {
     gradient: 'from-rose-500/20 to-rose-500/5',
@@ -55,7 +59,8 @@ const categoryColors = {
     iconBg: 'bg-rose-500/10',
     badge: 'bg-rose-500/20 text-rose-400 border-rose-500/30',
     glow: 'shadow-rose-500/30',
-    ring: 'ring-rose-500/30'
+    ring: 'ring-rose-500/30',
+    lightBadge: 'bg-rose-100 text-rose-700 border-rose-300',
   },
   Certification: {
     gradient: 'from-cyan-500/20 to-cyan-500/5',
@@ -65,7 +70,8 @@ const categoryColors = {
     iconBg: 'bg-cyan-500/10',
     badge: 'bg-cyan-500/20 text-cyan-400 border-cyan-500/30',
     glow: 'shadow-cyan-500/30',
-    ring: 'ring-cyan-500/30'
+    ring: 'ring-cyan-500/30',
+    lightBadge: 'bg-cyan-100 text-cyan-700 border-cyan-300',
   },
   Patent: {
     gradient: 'from-orange-500/20 to-orange-500/5',
@@ -75,7 +81,8 @@ const categoryColors = {
     iconBg: 'bg-orange-500/10',
     badge: 'bg-orange-500/20 text-orange-400 border-orange-500/30',
     glow: 'shadow-orange-500/30',
-    ring: 'ring-orange-500/30'
+    ring: 'ring-orange-500/30',
+    lightBadge: 'bg-orange-100 text-orange-700 border-orange-300',
   }
 };
 
@@ -116,11 +123,11 @@ const AchievementCard = ({
         group relative ${cardWidth} rounded-2xl overflow-hidden cursor-pointer
         transition-all duration-500 ease-out
         ${isActive 
-          ? `bg-zinc-800/95 dark:bg-zinc-800/95 light:bg-white/98 shadow-2xl ${colors.glow} ring-1 ${colors.ring}` 
-          : 'bg-zinc-800/70 dark:bg-zinc-800/70 light:bg-white/80 hover:bg-zinc-800/90'
+          ? `bg-zinc-800/95 dark:bg-zinc-800/95 shadow-2xl ${colors.glow} ring-1 ${colors.ring}` 
+          : 'bg-zinc-800/70 dark:bg-zinc-800/70 hover:bg-zinc-800/90'
         }
         backdrop-blur-xl border
-        ${isActive ? colors.border : 'border-zinc-700/30 dark:border-zinc-700/30 light:border-zinc-200/50'}
+        ${isActive ? colors.border : 'border-zinc-700/30 dark:border-zinc-700/30'}
       `}
       onClick={handleClick}
     >
@@ -131,10 +138,10 @@ const AchievementCard = ({
 
       {/* Certificate Thumbnail Preview */}
       {hasCertificate && thumbnailUrl && (
-        <div className={`relative ${thumbnailHeight} overflow-hidden bg-zinc-900 dark:bg-zinc-900 light:bg-zinc-100 transition-all duration-500 ease-out`}>
+        <div className={`relative ${thumbnailHeight} overflow-hidden bg-zinc-900 dark:bg-zinc-900 transition-all duration-500 ease-out`}>
           {/* Loading skeleton */}
           {!imageLoaded && !imageError && (
-            <div className="absolute inset-0 bg-zinc-800 dark:bg-zinc-800 light:bg-zinc-200 flex items-center justify-center">
+            <div className="absolute inset-0 bg-zinc-800 dark:bg-zinc-800 flex items-center justify-center">
               <div className="relative">
                 <div className="w-16 h-16 border-4 border-zinc-700 border-t-sky-400 rounded-full animate-spin" />
               </div>
@@ -245,7 +252,7 @@ const AchievementCard = ({
         {/* Title & Organization */}
         <div className="mb-3">
           <h3 className={`
-            font-semibold text-zinc-100 dark:text-zinc-100 light:text-zinc-800 
+            font-semibold text-zinc-100 dark:text-zinc-100 
             line-clamp-2 transition-all duration-300
             ${isActive 
               ? 'text-lg md:text-xl lg:text-2xl group-hover:text-sky-400' 
@@ -255,7 +262,7 @@ const AchievementCard = ({
             {title}
           </h3>
           <p className={`
-            text-zinc-400 dark:text-zinc-400 light:text-zinc-500 mt-1
+            text-zinc-400 dark:text-zinc-400 mt-1
             transition-all duration-300
             ${isActive ? 'text-sm md:text-base' : 'text-xs md:text-sm'}
           `}>
@@ -265,14 +272,14 @@ const AchievementCard = ({
 
         {/* Description - only show for active */}
         {isActive && (
-          <p className="text-sm md:text-base text-zinc-500 dark:text-zinc-500 light:text-zinc-600 line-clamp-2 md:line-clamp-3 transition-all duration-500">
+          <p className="text-sm md:text-base text-zinc-500 dark:text-zinc-500 line-clamp-2 md:line-clamp-3 transition-all duration-500">
             {description}
           </p>
         )}
 
         {/* Bottom Action - Only for active card */}
         {isActive && (
-          <div className="flex items-center justify-between mt-4 pt-4 border-t border-zinc-700/50 dark:border-zinc-700/50 light:border-zinc-200 transition-all duration-500">
+          <div className="flex items-center justify-between mt-4 pt-4 border-t border-zinc-700/50 dark:border-zinc-700/50 transition-all duration-500">
             <div className="flex items-center gap-2">
               <div className={`p-1.5 rounded-lg ${colors.iconBg} ${colors.text} transition-colors duration-300`}>
                 {certificateType === 'pdf' ? (
@@ -285,7 +292,7 @@ const AchievementCard = ({
                   </svg>
                 )}
               </div>
-              <span className="text-xs md:text-sm text-zinc-500 dark:text-zinc-500 light:text-zinc-400">
+              <span className="text-xs md:text-sm text-zinc-500 dark:text-zinc-500">
                 Click to view
               </span>
             </div>

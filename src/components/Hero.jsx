@@ -14,7 +14,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="pt-28 lg:pt-36"
+      className="pt-16 lg:pt-36"
     >
       <div className="container items-center lg:grid lg:grid-cols-2 lg:gap-10">
 
@@ -30,7 +30,7 @@ const Hero = () => {
               />
             </figure>
 
-            <div className="flex items-center gap-1.5 text-zinc-400 dark:text-zinc-400 light:text-zinc-600 text-sm tracking-wide">
+            <div className="flex items-center gap-1.5 text-zinc-400 dark:text-zinc-400 text-sm tracking-wide">
               <span className="relative w-2 h-2 rounded-full bg-emerald-400">
                 <span className="absolute inset-0 rounded-full bg-emerald-400 animate-ping"></span>
               </span>

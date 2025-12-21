@@ -54,15 +54,15 @@ const CertificateModal = ({ isOpen, onClose, certificate }) => {
       onClick={handleBackdropClick}
     >
       {/* Modal Container */}
-      <div className="relative w-full max-w-4xl max-h-[90vh] bg-zinc-900 dark:bg-zinc-900 light:bg-white rounded-2xl shadow-2xl overflow-hidden animate-scaleIn">
+      <div className="relative w-full max-w-4xl max-h-[90vh] bg-zinc-900 dark:bg-zinc-900 rounded-2xl shadow-2xl overflow-hidden animate-scaleIn">
         
         {/* Header */}
-        <div className="flex items-center justify-between p-4 border-b border-zinc-800 dark:border-zinc-800 light:border-zinc-200">
+        <div className="flex items-center justify-between p-4 border-b border-zinc-800 dark:border-zinc-800">
           <div className="flex-1 min-w-0">
-            <h3 className="text-lg font-semibold text-zinc-100 dark:text-zinc-100 light:text-zinc-800 truncate">
+            <h3 className="text-lg font-semibold text-zinc-100 dark:text-zinc-100 truncate">
               {certificate.title}
             </h3>
-            <p className="text-sm text-zinc-400 dark:text-zinc-400 light:text-zinc-500 truncate">
+            <p className="text-sm text-zinc-400 dark:text-zinc-400 truncate">
               {certificate.organization} • {certificate.year}
             </p>
           </div>
@@ -72,7 +72,7 @@ const CertificateModal = ({ isOpen, onClose, certificate }) => {
             {/* Download Button */}
             <button
               onClick={handleDownload}
-              className="p-2 rounded-lg bg-zinc-800 dark:bg-zinc-800 light:bg-zinc-100 text-zinc-400 dark:text-zinc-400 light:text-zinc-600 hover:text-sky-400 hover:bg-zinc-700 dark:hover:bg-zinc-700 light:hover:bg-zinc-200 transition-colors"
+              className="p-2 rounded-lg bg-zinc-800 dark:bg-zinc-800 text-zinc-400 dark:text-zinc-400 hover:text-sky-400 hover:bg-zinc-700 dark:hover:bg-zinc-700 transition-colors"
               title="Download Certificate"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -83,7 +83,7 @@ const CertificateModal = ({ isOpen, onClose, certificate }) => {
             {/* Open in New Tab */}
             <button
               onClick={handleOpenNewTab}
-              className="p-2 rounded-lg bg-zinc-800 dark:bg-zinc-800 light:bg-zinc-100 text-zinc-400 dark:text-zinc-400 light:text-zinc-600 hover:text-sky-400 hover:bg-zinc-700 dark:hover:bg-zinc-700 light:hover:bg-zinc-200 transition-colors"
+              className="p-2 rounded-lg bg-zinc-800 dark:bg-zinc-800 text-zinc-400 dark:text-zinc-400 hover:text-sky-400 hover:bg-zinc-700 dark:hover:bg-zinc-700 transition-colors"
               title="Open in New Tab"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -94,7 +94,7 @@ const CertificateModal = ({ isOpen, onClose, certificate }) => {
             {/* Close Button */}
             <button
               onClick={onClose}
-              className="p-2 rounded-lg bg-zinc-800 dark:bg-zinc-800 light:bg-zinc-100 text-zinc-400 dark:text-zinc-400 light:text-zinc-600 hover:text-red-400 hover:bg-zinc-700 dark:hover:bg-zinc-700 light:hover:bg-zinc-200 transition-colors"
+              className="p-2 rounded-lg bg-zinc-800 dark:bg-zinc-800 text-zinc-400 dark:text-zinc-400 hover:text-red-400 hover:bg-zinc-700 dark:hover:bg-zinc-700 transition-colors"
               title="Close (Esc)"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -105,7 +105,7 @@ const CertificateModal = ({ isOpen, onClose, certificate }) => {
         </div>
 
         {/* Certificate Image */}
-        <div className="relative overflow-auto max-h-[calc(90vh-80px)] p-4 bg-zinc-950/50 dark:bg-zinc-950/50 light:bg-zinc-100">
+        <div className="relative overflow-auto max-h-[calc(90vh-80px)] p-4 bg-zinc-950/50 dark:bg-zinc-950/50">
           <div className="flex items-center justify-center min-h-[300px]">
             <img
               src={certificate.certificateUrl}
@@ -137,9 +137,9 @@ const CertificateModal = ({ isOpen, onClose, certificate }) => {
         </div>
 
         {/* Footer with zoom hint */}
-        <div className="px-4 py-2 border-t border-zinc-800 dark:border-zinc-800 light:border-zinc-200 text-center">
-          <p className="text-xs text-zinc-500 dark:text-zinc-500 light:text-zinc-400">
-            Press <kbd className="px-1.5 py-0.5 rounded bg-zinc-800 dark:bg-zinc-800 light:bg-zinc-200 text-zinc-400 dark:text-zinc-400 light:text-zinc-600">Esc</kbd> to close • Click outside to dismiss
+        <div className="px-4 py-2 border-t border-zinc-800 dark:border-zinc-800 text-center">
+          <p className="text-xs text-zinc-500 dark:text-zinc-500">
+            Press <kbd className="px-1.5 py-0.5 rounded bg-zinc-800 dark:bg-zinc-800 text-zinc-400 dark:text-zinc-400">Esc</kbd> to close • Click outside to dismiss
           </p>
         </div>
       </div>

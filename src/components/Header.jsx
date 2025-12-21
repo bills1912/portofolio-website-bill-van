@@ -21,7 +21,7 @@ const Header = () => {
   const [navOpen, setNavOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 w-full h-20 flex items-center z-40 bg-gradient-to-b from-zinc-900 to-zinc-900/0 dark:from-zinc-900 dark:to-zinc-900/0 light:from-white light:to-white/0 transition-colors duration-300">
+    <header className="fixed top-0 left-0 w-full h-20 flex items-center z-40 bg-gradient-to-b from-zinc-900 to-zinc-900/0 dark:from-zinc-900 dark:to-zinc-900/0 transition-colors duration-300">
       <div className="max-w-screen-2xl w-full mx-auto px-4 flex justify-between items-center md:px-6 md:grid md:grid-cols-[1fr,3fr,1fr]">
 
         <h1>
@@ -34,7 +34,7 @@ const Header = () => {
               width={40}
               height={40}
               alt="Bill Van Ricardo Zalukhu"
-              className="dark:invert-0 light:invert transition-[filter] duration-300"
+              className="transition-[filter] duration-300"
             />
           </a>
         </h1>

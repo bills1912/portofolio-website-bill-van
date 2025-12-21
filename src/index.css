@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 /* ---------------------------------- *\
  * BASE
 \* ---------------------------------- */
@@ -19,38 +17,32 @@ html {
   --text-primary: #fafafa;
   --text-secondary: #a1a1aa;
   --accent: #38bdf8;
+  --tag-bg: rgba(250, 250, 250, 0.1);
+  --tag-text: #a1a1aa;
 }
 
-.light {
+html.light {
   --bg-primary: #fafafa;
   --bg-secondary: #f4f4f5;
   --text-primary: #18181b;
   --text-secondary: #71717a;
   --accent: #0ea5e9;
+  --tag-bg: #27272a;
+  --tag-text: #fafafa;
 }
 
 body {
   @apply bg-zinc-900 text-zinc-50 transition-colors duration-300;
 }
 
-.light body,
-body:has(.light) {
-  @apply bg-zinc-50 text-zinc-900;
-}
-
-html.light {
-  @apply bg-zinc-50;
-}
-
 html.light body {
-  @apply bg-zinc-50 text-zinc-900;
+  background-color: #fafafa;
+  color: #18181b;
 }
 
 html.dark body {
   @apply bg-zinc-900 text-zinc-50;
 }
-
-
 
 /* ---------------------------------- *\
  * TYPOGRAPHY
@@ -64,26 +56,24 @@ html.dark body {
   -webkit-text-fill-color: transparent;
 }
 
-.light .headline-1,
-.light .headline-2 {
-  background: -webkit-linear-gradient(0deg, #18181b, #52525b);
+html.light .headline-1,
+html.light .headline-2 {
+  background: -webkit-linear-gradient(0deg, #18181b, #3f3f46);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .headline-1 {
-  @apply text-5xl leading-tight font-semibold lg:text-[55px] lg:leading-[1.15]
+  @apply text-5xl leading-tight font-semibold lg:text-[55px] lg:leading-[1.15];
 }
 
 .headline-2 {
-  @apply text-3xl lg:text-4xl lg:leading-tight font-semibold
+  @apply text-3xl lg:text-4xl lg:leading-tight font-semibold;
 }
 
 .title-1 {
-  @apply text-[22px] font-normal
+  @apply text-[22px] font-normal;
 }
-
-
 
 /* ---------------------------------- *\
  * UTILITIES
@@ -102,23 +92,21 @@ html.dark body {
   @apply bg-zinc-700 overflow-hidden;
 }
 
-.light .img-box {
-  @apply bg-zinc-200;
+html.light .img-box {
+  background-color: #e4e4e7;
 }
 
 .img-cover {
-  @apply w-full h-full object-cover
+  @apply w-full h-full object-cover;
 }
 
 .section {
-  @apply pt-20 lg:pt-32
+  @apply pt-20 lg:pt-32;
 }
 
 .reveal-up {
-  @apply translate-y-20 opacity-0
+  @apply translate-y-20 opacity-0;
 }
-
-
 
 /* ---------------------------------- *\
  * COMPONENTS
@@ -127,141 +115,165 @@ html.dark body {
 /* Menu btn */
 
 .menu-btn {
-  @apply w-10 h-10 grid place-items-center bg-zinc-50/10 rounded-xl ring-inset ring-1 ring-zinc-50/[0.02] backdrop-blur-2xl hover:bg-zinc-50/15 transition-[transform,background-color] active:scale-95
+  @apply w-10 h-10 grid place-items-center bg-zinc-50/10 rounded-xl ring-inset ring-1 ring-zinc-50/[0.02] backdrop-blur-2xl hover:bg-zinc-50/15 transition-[transform,background-color] active:scale-95 text-zinc-50;
 }
 
-.light .menu-btn {
-  @apply bg-zinc-900/10 ring-zinc-900/[0.02] hover:bg-zinc-900/15 text-zinc-900;
+html.light .menu-btn {
+  background-color: rgba(24, 24, 27, 0.1);
+  --tw-ring-color: rgba(24, 24, 27, 0.2);
+  color: #18181b;
 }
 
+html.light .menu-btn:hover {
+  background-color: rgba(24, 24, 27, 0.15);
+}
 
 /* Navbar */
 
 .navbar {
-  @apply absolute top-full mt-2 right-0 min-w-40 p-2 bg-zinc-50/10 rounded-2xl ring-inset ring-1 ring-zinc-50/5 scale-90 isolate blur-sm opacity-0 invisible transition-[opacity,transform,filter] md:static md:flex md:items-center md:mt-0 md:opacity-100 md:blur-0 md:visible md:scale-100 backdrop-blur-2xl
+  @apply absolute top-full mt-2 right-0 min-w-40 p-2 bg-zinc-800/95 rounded-2xl ring-inset ring-1 ring-zinc-50/5 scale-90 isolate blur-sm opacity-0 invisible transition-[opacity,transform,filter] md:static md:flex md:items-center md:mt-0 md:opacity-100 md:blur-0 md:visible md:scale-100 backdrop-blur-2xl;
 }
 
-.light .navbar {
-  @apply bg-white/80 ring-zinc-200;
+html.light .navbar {
+  background-color: rgba(255, 255, 255, 0.95);
+  --tw-ring-color: #e4e4e7;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1);
 }
 
 .navbar.active {
-  @apply opacity-100 scale-100 blur-0 visible
+  @apply opacity-100 scale-100 blur-0 visible;
 }
 
 .nav-link {
-  @apply grid items-center h-9 px-4 text-sm font-medium tracking-wide text-zinc-50/50 hover:text-zinc-50 transition-colors
+  @apply grid items-center h-9 px-4 text-sm font-medium tracking-wide text-zinc-400 hover:text-zinc-50 transition-colors;
 }
 
-.light .nav-link {
-  @apply text-zinc-500 hover:text-zinc-900;
+html.light .nav-link {
+  color: #52525b;
+}
+
+html.light .nav-link:hover {
+  color: #18181b;
 }
 
 .nav-link.active {
-  @apply text-zinc-900 duration-500
+  @apply text-zinc-900 duration-500;
 }
 
-.light .nav-link.active {
-  @apply text-white;
+html.light .nav-link.active {
+  color: #ffffff;
 }
 
 .navbar .active-box {
-  @apply absolute bg-zinc-50 rounded-lg -z-10 transition-[top,left] duration-500
+  @apply absolute bg-zinc-50 rounded-lg -z-10 transition-[top,left] duration-500;
 }
 
-.light .navbar .active-box {
-  @apply bg-zinc-900;
+html.light .navbar .active-box {
+  background-color: #18181b;
 }
-
 
 /* Button */
 
 .btn {
-  @apply max-w-max h-9 flex items-center gap-2 px-4 rounded-xl font-medium text-sm ring-1 ring-zinc-50/5 ring-inset transition-[background-color]
+  @apply max-w-max h-9 flex items-center gap-2 px-4 rounded-xl font-medium text-sm ring-1 ring-zinc-50/5 ring-inset transition-[background-color];
 }
 
-.light .btn {
-  @apply ring-zinc-900/10;
+html.light .btn {
+  --tw-ring-color: #e4e4e7;
 }
 
 .btn-secondary {
-  @apply bg-zinc-50 text-zinc-900 active:bg-zinc-50/80
+  @apply bg-zinc-50 text-zinc-900 active:bg-zinc-50/80;
 }
 
-.light .btn-secondary {
-  @apply bg-zinc-900 text-zinc-50 active:bg-zinc-900/80;
+html.light .btn-secondary {
+  background-color: #18181b;
+  color: #fafafa;
+}
+
+html.light .btn-secondary:active {
+  background-color: #27272a;
 }
 
 .btn .material-symbols-rounded {
-  @apply text-[18px]
+  @apply text-[18px];
 }
 
-.btn:has( .material-symbols-rounded) {
-  @apply pr-3
+.btn:has(.material-symbols-rounded) {
+  @apply pr-3;
 }
 
 .btn-primary {
-  @apply h-11 bg-sky-400 text-zinc-950 hover:bg-sky-300 active:bg-sky-400
+  @apply h-11 bg-sky-400 text-zinc-950 hover:bg-sky-300 active:bg-sky-400;
 }
 
-.light .btn-primary {
-  @apply bg-sky-500 hover:bg-sky-400 active:bg-sky-500;
+html.light .btn-primary {
+  background-color: #0ea5e9;
+  color: #ffffff;
+}
+
+html.light .btn-primary:hover {
+  background-color: #0284c7;
+}
+
+html.light .btn-primary:active {
+  background-color: #0ea5e9;
 }
 
 .btn-outline {
-  @apply h-11 bg-zinc-800 hover:bg-zinc-700 active:bg-zinc-800
+  @apply h-11 bg-zinc-800 text-zinc-50 hover:bg-zinc-700 active:bg-zinc-800;
 }
 
-.light .btn-outline {
-  @apply bg-zinc-100 hover:bg-zinc-200 active:bg-zinc-100 text-zinc-900;
+html.light .btn-outline {
+  background-color: #f4f4f5;
+  color: #18181b;
+  border: 1px solid #d4d4d8;
 }
 
+html.light .btn-outline:hover {
+  background-color: #e4e4e7;
+}
+
+html.light .btn-outline:active {
+  background-color: #f4f4f5;
+}
 
 /* Text field */
 
 .label {
-  @apply block text-zinc-200 text-sm font-normal mb-2
+  @apply block text-zinc-200 text-sm font-normal mb-2;
 }
 
-.light .label {
-  @apply text-zinc-700;
+html.light .label {
+  color: #3f3f46;
 }
 
 .text-field {
-  @apply block outline-none w-full px-3 py-3 text-sm bg-zinc-800 rounded-xl ring-1 ring-inset ring-transparent transition-shadow hover:ring-zinc-50/5 focus:ring-sky-400 focus:ring-2
+  @apply block outline-none w-full px-3 py-3 text-sm bg-zinc-800 text-zinc-50 rounded-xl ring-1 ring-inset ring-transparent transition-shadow hover:ring-zinc-50/5 focus:ring-sky-400 focus:ring-2;
 }
 
-.light .text-field {
-  @apply bg-white text-zinc-900 hover:ring-zinc-200 border border-zinc-200;
+html.light .text-field {
+  background-color: #ffffff;
+  color: #18181b;
+  border: 1px solid #d4d4d8;
+}
+
+html.light .text-field:hover {
+  --tw-ring-color: #a1a1aa;
+}
+
+html.light .text-field:focus {
+  border-color: #0ea5e9;
 }
 
 .text-field::placeholder {
-  @apply text-zinc-400
+  @apply text-zinc-400;
 }
 
-.light .text-field::placeholder {
-  @apply text-zinc-500;
+html.light .text-field::placeholder {
+  color: #71717a;
 }
-
-
-/* Cards & Sections with theme support */
-
-.light .bg-zinc-800\/50 {
-  @apply bg-zinc-100/80;
-}
-
-.light .bg-zinc-800 {
-  @apply bg-white shadow-sm border border-zinc-200;
-}
-
-.light .ring-zinc-50\/5 {
-  @apply ring-zinc-200;
-}
-
-.light .ring-zinc-50\/10 {
-  @apply ring-zinc-200;
-}
-
 
 /* Theme Toggle Animation */
 .theme-toggle {
@@ -269,7 +281,7 @@ html.dark body {
 }
 
 .theme-toggle::before {
-  content: '';
+  content: "";
   @apply absolute inset-0 bg-gradient-to-r from-sky-400/0 via-sky-400/20 to-sky-400/0 -translate-x-full;
   animation: shimmer 2s infinite;
 }
@@ -279,7 +291,6 @@ html.dark body {
     transform: translateX(100%);
   }
 }
-
 
 /* Smooth theme transitions */
 * {
@@ -292,14 +303,13 @@ html.dark body {
   transition: none !important;
 }
 
-
 /* Achievement Card Enhancements */
 .achievement-card {
   @apply relative overflow-hidden;
 }
 
 .achievement-card::before {
-  content: '';
+  content: "";
   @apply absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/5 to-transparent opacity-0 transition-opacity duration-300;
 }
 
@@ -307,16 +317,15 @@ html.dark body {
   @apply opacity-100;
 }
 
-
 /* Glassmorphism effects */
 .glass {
   @apply bg-white/10 backdrop-blur-xl border border-white/20;
 }
 
-.light .glass {
-  @apply bg-white/80 border-zinc-200;
+html.light .glass {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-color: #e4e4e7;
 }
-
 
 /* Enhanced scrollbar */
 ::-webkit-scrollbar {
@@ -327,32 +336,281 @@ html.dark body {
   @apply bg-zinc-900;
 }
 
-.light ::-webkit-scrollbar-track {
-  @apply bg-zinc-100;
+html.light ::-webkit-scrollbar-track {
+  background-color: #f4f4f5;
 }
 
 ::-webkit-scrollbar-thumb {
   @apply bg-zinc-700 rounded-full;
 }
 
-.light ::-webkit-scrollbar-thumb {
-  @apply bg-zinc-300;
+html.light ::-webkit-scrollbar-thumb {
+  background-color: #d4d4d8;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-zinc-600;
 }
 
-.light ::-webkit-scrollbar-thumb:hover {
-  @apply bg-zinc-400;
+html.light ::-webkit-scrollbar-thumb:hover {
+  background-color: #a1a1aa;
 }
-
 
 /* Selection colors */
 ::selection {
   @apply bg-sky-400/30 text-sky-100;
 }
 
-.light ::selection {
-  @apply bg-sky-500/30 text-sky-900;
+html.light ::selection {
+  background-color: rgba(14, 165, 233, 0.3);
+  color: #0c4a6e;
+}
+
+/* ---------------------------------- *\
+ * LIGHT MODE SPECIFIC OVERRIDES
+\* ---------------------------------- */
+
+/* Header gradient fix */
+html.light header {
+  background: linear-gradient(
+    to bottom,
+    rgba(250, 250, 250, 1),
+    rgba(250, 250, 250, 0)
+  );
+}
+
+/* Section backgrounds */
+html.light .section {
+  background-color: #fafafa;
+}
+
+/* Card backgrounds for light mode - using direct CSS properties instead of @apply */
+html.light .bg-zinc-800\/50,
+html.light .bg-zinc-800\/70,
+html.light .bg-zinc-800\/80,
+html.light .bg-zinc-800\/90,
+html.light .bg-zinc-800\/95 {
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e4e4e7;
+}
+
+html.light .bg-zinc-800 {
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e4e4e7;
+}
+
+html.light .bg-zinc-900 {
+  background-color: #fafafa;
+}
+
+html.light .bg-zinc-900\/50 {
+  background-color: #f4f4f5;
+}
+
+html.light .bg-zinc-950\/50 {
+  background-color: #f4f4f5;
+}
+
+/* Text colors for light mode - using direct CSS properties */
+html.light .text-zinc-100 {
+  color: #27272a;
+}
+
+html.light .text-zinc-200 {
+  color: #3f3f46;
+}
+
+html.light .text-zinc-300 {
+  color: #52525b;
+}
+
+html.light .text-zinc-400 {
+  color: #71717a;
+}
+
+html.light .text-zinc-50 {
+  color: #18181b;
+}
+
+/* Ring colors for light mode */
+html.light .ring-zinc-50\/5,
+html.light .ring-zinc-50\/10,
+html.light .ring-zinc-50\/\[0\.02\] {
+  --tw-ring-color: #e4e4e7;
+}
+
+html.light .ring-zinc-700\/30,
+html.light .ring-zinc-700\/50 {
+  --tw-ring-color: #d4d4d8;
+}
+
+/* Border colors for light mode */
+html.light .border-zinc-700\/50,
+html.light .border-zinc-700\/30,
+html.light .border-zinc-800 {
+  border-color: #e4e4e7;
+}
+
+/* Hover states for light mode */
+html.light .hover\:bg-zinc-700\/50:hover,
+html.light .hover\:bg-zinc-700:hover,
+html.light .hover\:bg-zinc-800:hover {
+  background-color: #f4f4f5;
+}
+
+html.light .hover\:bg-zinc-50:hover {
+  background-color: #18181b;
+}
+
+html.light .hover\:text-zinc-50:hover {
+  color: #ffffff;
+}
+
+html.light .hover\:text-zinc-200:hover {
+  color: #18181b;
+}
+
+/* Active states for light mode */
+html.light .active\:bg-zinc-700\/60:active {
+  background-color: #e4e4e7;
+}
+
+/* Group hover for light mode */
+html.light .group:hover .group-hover\:bg-zinc-900 {
+  background-color: #e4e4e7;
+}
+
+/* Footer section */
+html.light footer {
+  background-color: #f4f4f5;
+}
+
+/* Logo invert for light mode */
+html.light .logo img {
+  filter: invert(1);
+}
+
+/* Fix for specific dark mode utility classes in light mode */
+html.light .dark\:bg-zinc-800 {
+  background-color: #ffffff;
+  border: 1px solid #e4e4e7;
+}
+
+html.light .dark\:text-zinc-100 {
+  color: #27272a;
+}
+
+html.light .dark\:text-zinc-300 {
+  color: #52525b;
+}
+
+html.light .dark\:text-zinc-400 {
+  color: #71717a;
+}
+
+html.light .dark\:text-zinc-500 {
+  color: #71717a;
+}
+
+html.light .dark\:ring-zinc-50\/5 {
+  --tw-ring-color: #e4e4e7;
+}
+
+html.light .dark\:border-zinc-700\/50,
+html.light .dark\:border-zinc-700\/30 {
+  border-color: #e4e4e7;
+}
+
+html.light .dark\:border-zinc-800 {
+  border-color: #e4e4e7;
+}
+
+/* Social link icons in light mode */
+html.light .text-zinc-400.dark\:text-zinc-400 {
+  color: #52525b;
+}
+
+/* Achievement section specific fixes */
+html.light .bg-zinc-800\/90.dark\:bg-zinc-800\/90 {
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 1px solid #e4e4e7;
+}
+
+html.light .text-zinc-100.dark\:text-zinc-100 {
+  color: #27272a;
+}
+
+/* Progress bar background */
+html.light .bg-zinc-800.dark\:bg-zinc-800 {
+  background-color: #e4e4e7;
+}
+
+/* Keyboard hints */
+html.light kbd {
+  background-color: #e4e4e7;
+  color: #52525b;
+}
+
+/* Modal backgrounds */
+html.light .bg-zinc-900.dark\:bg-zinc-900 {
+  background-color: #ffffff;
+}
+
+html.light .bg-zinc-950\/50.dark\:bg-zinc-950\/50 {
+  background-color: #f4f4f5;
+}
+
+/* Hover states with dark prefix */
+html.light .dark\:hover\:bg-zinc-700:hover {
+  background-color: #e4e4e7;
+}
+
+html.light .dark\:hover\:bg-zinc-50:hover {
+  background-color: #18181b;
+}
+
+html.light .dark\:hover\:text-zinc-950:hover {
+  color: #ffffff;
+}
+
+html.light .dark\:hover\:text-zinc-200:hover {
+  color: #18181b;
+}
+
+/* Active states with dark prefix */
+html.light .dark\:active\:bg-zinc-50\/80:active {
+  background-color: rgba(24, 24, 27, 0.8);
+}
+
+/* Tag badge styling */
+.tag-badge {
+  background-color: rgba(250, 250, 250, 0.05);
+  color: #a1a1aa;
+}
+
+html.light .tag-badge {
+  background-color: #e4e4e7;
+  color: #52525b;
+}
+
+/* Fix theme toggle in light mode */
+html.light .theme-toggle {
+  background-color: rgba(255, 255, 255, 0.9);
+  --tw-ring-color: #e4e4e7;
+}
+
+html.light .theme-toggle:hover {
+  --tw-ring-color: rgba(56, 189, 248, 0.5);
+  background-color: #f4f4f5;
+}
+
+html.light .theme-toggle span {
+  color: #52525b;
+}
+
+html.light .theme-toggle:hover span {
+  color: #0ea5e9;
 }

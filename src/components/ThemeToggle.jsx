@@ -79,14 +79,14 @@ const ThemeToggle = () => {
   return (
     <button
       onClick={cycleTheme}
-      className="theme-toggle group relative flex items-center gap-2 px-3 py-2 rounded-xl bg-zinc-50/10 dark:bg-zinc-800/80 light:bg-white/80 ring-1 ring-inset ring-zinc-50/10 dark:ring-zinc-700/50 light:ring-zinc-200 backdrop-blur-xl transition-all duration-300 hover:ring-sky-400/50 hover:bg-zinc-50/20 dark:hover:bg-zinc-700/80 active:scale-95"
+      className="theme-toggle group relative flex items-center gap-2 px-3 py-2 rounded-xl bg-zinc-800/80 dark:bg-zinc-800/80 ring-1 ring-inset ring-zinc-700/50 dark:ring-zinc-700/50 backdrop-blur-xl transition-all duration-300 hover:ring-sky-400/50 hover:bg-zinc-700/80 dark:hover:bg-zinc-700/80 active:scale-95"
       aria-label={`Current theme: ${theme}. Click to change.`}
       title={`Theme: ${getLabel()}`}
     >
-      <span className="relative flex items-center justify-center w-5 h-5 text-zinc-400 dark:text-zinc-300 light:text-zinc-600 group-hover:text-sky-400 transition-colors duration-300">
+      <span className="relative flex items-center justify-center w-5 h-5 text-zinc-300 dark:text-zinc-300 group-hover:text-sky-400 transition-colors duration-300">
         {getIcon()}
       </span>
-      <span className="text-xs font-medium text-zinc-400 dark:text-zinc-300 light:text-zinc-600 group-hover:text-sky-400 transition-colors duration-300 hidden sm:block">
+      <span className="text-xs font-medium text-zinc-300 dark:text-zinc-300 group-hover:text-sky-400 transition-colors duration-300 hidden sm:block">
         {getLabel()}
       </span>
       

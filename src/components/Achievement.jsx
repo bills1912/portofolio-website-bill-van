@@ -183,7 +183,7 @@ const Achievement = () => {
 
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev === achievements.length - 1 ? 0 : prev + 1));
-    }, 3500); // Ganti setiap 4 detik
+    }, 3500);
 
     return () => clearInterval(interval);
   }, [isPaused, achievements.length]);
@@ -253,7 +253,7 @@ const Achievement = () => {
           <h2 className="headline-2 mb-4 reveal-up mx-auto">
             Achievements & Recognition
           </h2>
-          <p className="text-zinc-400 dark:text-zinc-400 light:text-zinc-600 max-w-[50ch] mx-auto reveal-up">
+          <p className="text-zinc-400 dark:text-zinc-400 max-w-[50ch] mx-auto reveal-up">
             A collection of certifications, awards, and patents. Click to view full certificate.
           </p>
         </div>
@@ -306,7 +306,7 @@ const Achievement = () => {
           <button
             onClick={goToPrev}
             disabled={isAnimating}
-            className="absolute left-2 md:left-8 lg:left-16 top-1/2 -translate-y-1/2 p-3 md:p-4 rounded-full bg-zinc-800/90 dark:bg-zinc-800/90 light:bg-white/90 text-zinc-100 dark:text-zinc-100 light:text-zinc-800 hover:bg-sky-400 hover:text-zinc-900 transition-all duration-300 shadow-xl backdrop-blur-sm z-40 disabled:opacity-50 disabled:cursor-not-allowed group"
+            className="absolute left-2 md:left-8 lg:left-16 top-1/2 -translate-y-1/2 p-3 md:p-4 rounded-full bg-zinc-800/90 dark:bg-zinc-800/90 text-zinc-100 dark:text-zinc-100 hover:bg-sky-400 hover:text-zinc-900 transition-all duration-300 shadow-xl backdrop-blur-sm z-40 disabled:opacity-50 disabled:cursor-not-allowed group"
             aria-label="Previous achievement"
           >
             <svg className="w-5 h-5 md:w-6 md:h-6 transition-transform group-hover:-translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -317,7 +317,7 @@ const Achievement = () => {
           <button
             onClick={goToNext}
             disabled={isAnimating}
-            className="absolute right-2 md:right-8 lg:right-16 top-1/2 -translate-y-1/2 p-3 md:p-4 rounded-full bg-zinc-800/90 dark:bg-zinc-800/90 light:bg-white/90 text-zinc-100 dark:text-zinc-100 light:text-zinc-800 hover:bg-sky-400 hover:text-zinc-900 transition-all duration-300 shadow-xl backdrop-blur-sm z-40 disabled:opacity-50 disabled:cursor-not-allowed group"
+            className="absolute right-2 md:right-8 lg:right-16 top-1/2 -translate-y-1/2 p-3 md:p-4 rounded-full bg-zinc-800/90 dark:bg-zinc-800/90 text-zinc-100 dark:text-zinc-100 hover:bg-sky-400 hover:text-zinc-900 transition-all duration-300 shadow-xl backdrop-blur-sm z-40 disabled:opacity-50 disabled:cursor-not-allowed group"
             aria-label="Next achievement"
           >
             <svg className="w-5 h-5 md:w-6 md:h-6 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -326,7 +326,7 @@ const Achievement = () => {
           </button>
           <button
             onClick={() => setIsPaused(!isPaused)}
-            className="absolute bottom-4 left-1/2 -translate-x-1/2 p-2 rounded-full bg-zinc-800/80 text-zinc-400 hover:text-sky-400 transition-colors z-40"
+            className="absolute bottom-4 left-1/2 -translate-x-1/2 p-2 rounded-full bg-zinc-800/80 dark:bg-zinc-800/80 text-zinc-400 hover:text-sky-400 transition-colors z-40"
             aria-label={isPaused ? "Play" : "Pause"}
           >
             {isPaused ? (
@@ -342,7 +342,7 @@ const Achievement = () => {
         </div>
 
         {/* Progress Bar */}
-        <div className="relative h-1 bg-zinc-800 dark:bg-zinc-800 light:bg-zinc-200 rounded-full max-w-md mx-auto mt-8 overflow-hidden">
+        <div className="relative h-1 bg-zinc-800 dark:bg-zinc-800 rounded-full max-w-md mx-auto mt-8 overflow-hidden">
           <div
             className="absolute h-full bg-gradient-to-r from-sky-400 to-sky-500 rounded-full transition-all duration-500 ease-out"
             style={{
@@ -373,11 +373,11 @@ const Achievement = () => {
 
         {/* Counter with animation */}
         <div className="text-center mt-4">
-          <span className="inline-flex items-center gap-2 text-zinc-500 dark:text-zinc-500 light:text-zinc-400 text-sm">
+          <span className="inline-flex items-center gap-2 text-zinc-500 dark:text-zinc-500 text-sm">
             <span className="font-mono text-lg text-sky-400 tabular-nums">
               {String(activeIndex + 1).padStart(2, '0')}
             </span>
-            <span className="text-zinc-600">/</span>
+            <span className="text-zinc-600 dark:text-zinc-600">/</span>
             <span className="font-mono tabular-nums">
               {String(achievements.length).padStart(2, '0')}
             </span>
@@ -385,10 +385,10 @@ const Achievement = () => {
         </div>
 
         {/* Keyboard hint */}
-        <div className="hidden md:flex justify-center mt-4 gap-4 text-xs text-zinc-600">
+        <div className="hidden md:flex justify-center mt-4 gap-4 text-xs text-zinc-600 dark:text-zinc-600">
           <span className="flex items-center gap-1">
-            <kbd className="px-2 py-1 rounded bg-zinc-800 dark:bg-zinc-800 light:bg-zinc-200 text-zinc-400">←</kbd>
-            <kbd className="px-2 py-1 rounded bg-zinc-800 dark:bg-zinc-800 light:bg-zinc-200 text-zinc-400">→</kbd>
+            <kbd className="px-2 py-1 rounded bg-zinc-800 dark:bg-zinc-800 text-zinc-400">←</kbd>
+            <kbd className="px-2 py-1 rounded bg-zinc-800 dark:bg-zinc-800 text-zinc-400">→</kbd>
             <span className="ml-1">Navigate</span>
           </span>
           <span className="flex items-center gap-1">
