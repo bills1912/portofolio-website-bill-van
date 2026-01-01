@@ -1,0 +1,122 @@
+/* ---------------------------------- *\
+ * TESTIMONIAL SECTION ADDITIONS
+ * Add this to the end of your index.css file
+\* ---------------------------------- */
+
+/* Hide scrollbar for testimonial carousel */
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* Testimonial card hover effects */
+.testimonial-card {
+  @apply relative overflow-hidden;
+}
+
+.testimonial-card::before {
+  content: "";
+  @apply absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/5 to-transparent opacity-0 transition-opacity duration-300;
+}
+
+.testimonial-card:hover::before {
+  @apply opacity-100;
+}
+
+/* Smooth testimonial transitions */
+.testimonial-scrub {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.testimonial-scrub > div {
+  scroll-snap-align: center;
+}
+
+/* Avatar gradient animation */
+@keyframes avatarGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
+  }
+}
+
+.testimonial-avatar-glow {
+  animation: avatarGlow 3s ease-in-out infinite;
+}
+
+/* Quote animation */
+@keyframes floatQuote {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.testimonial-quote {
+  animation: floatQuote 4s ease-in-out infinite;
+}
+
+/* Light mode specific for testimonials */
+html.light .testimonial-card {
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 1px solid #e4e4e7;
+}
+
+html.light .testimonial-card:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+html.light .testimonial-card.active {
+  box-shadow: 0 25px 50px -12px rgba(14, 165, 233, 0.15);
+}
+
+/* Dot indicators light mode */
+html.light .testimonial-dot {
+  background-color: #d4d4d8;
+}
+
+html.light .testimonial-dot.active {
+  background-color: #0ea5e9;
+}
+
+/* Navigation buttons light mode */
+html.light .testimonial-nav-btn {
+  background-color: #f4f4f5;
+  border: 1px solid #e4e4e7;
+  color: #52525b;
+}
+
+html.light .testimonial-nav-btn:hover {
+  background-color: #e4e4e7;
+  color: #18181b;
+}
+
+/* Stats light mode */
+html.light .testimonial-stats {
+  color: #18181b;
+}
+
+/* Featured badge light mode */
+html.light .testimonial-featured-badge {
+  background: linear-gradient(135deg, #f59e0b, #ea580c);
+}
+
+/* Write review button light mode */
+html.light .write-review-btn {
+  background-color: #f4f4f5;
+  border: 1px solid #d4d4d8;
+  color: #18181b;
+}
+
+html.light .write-review-btn:hover {
+  background-color: #e4e4e7;
+}

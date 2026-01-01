@@ -34,7 +34,7 @@ import About from "./components/About";
 import Skill from "./components/Skill";
 import Work from "./components/Work";
 import Achievement from "./components/Achievement";
-// import Review from "./components/Review";
+import Testimonial from "./components/Testimonial";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
@@ -69,8 +69,8 @@ const App = () => {
           <About />
           <Skill />
           <Work />
+          <Testimonial />
           <Achievement />
-          {/* <Review /> */}
           <Contact />
         </main>
         <Footer />

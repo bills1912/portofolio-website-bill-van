@@ -24,6 +24,10 @@ const sitemap = [
     href: '#work'
   },
   {
+    label: 'Testimonials',
+    href: '#testimonials'
+  },
+  {
     label: 'Achievements',
     href: '#achievements'
   },
