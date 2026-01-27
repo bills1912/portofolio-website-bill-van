@@ -16,7 +16,7 @@ import TestimonialCard from "./TestimonialCard";
 /**
  * API Configuration
  */
-const API_BASE_URL = 'https://testimonials-system.onrender.com';
+const API_BASE_URL = 'https://testimonials-system-production.up.railway.app';
 
 /**
  * Testimonial Section Component
